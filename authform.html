@@ -117,6 +117,11 @@
             </div>
 
             <div class="form-group">
+                <label for="course">Course:</label>
+                <input type="text" id="course" name="course" placeholder="Enter Course" required>
+            </div>
+
+            <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" placeholder="Enter Password" required>
             </div>
@@ -137,6 +142,7 @@
             event.preventDefault();
             const studentID = document.getElementById('student-id').value;
             const fullName = document.getElementById('full-name').value;
+            const course = document.getElementById('course').value;  // Get the course
             const password = document.getElementById('password').value;
 
             const savedStudentID = localStorage.getItem('studentID');
@@ -150,6 +156,7 @@
                 // Store data if no user exists in LocalStorage
                 localStorage.setItem('studentID', studentID);
                 localStorage.setItem('fullName', fullName);
+                localStorage.setItem('course', course);  // Store the course
                 localStorage.setItem('password', password);
                 alert('Account created and logged in successfully!');
                 window.location.href = 'mainpage.html';
