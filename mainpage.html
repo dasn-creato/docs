@@ -156,10 +156,11 @@
                 <textarea id="formComments" class="form-control" rows="4"></textarea>
             </div>
             <button type="button" id="submitBtn">Submit</button>
+            <button type="button" id="logoutBtn" style="background-color: #FF5733; margin-top: 10px;">Logout</button>
         </form>
     </div>
 
-    <!-- Include EmailJS SDK (updated with the correct URL) -->
+    <!-- Include EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <script type="text/javascript">
@@ -208,6 +209,18 @@
                     alert('Failed to submit request. Please try again.');
                 });
         });
+
+        // Logout function
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            // Clear form data
+            document.querySelector('form').reset();
+
+            // Redirect to index.html
+            window.location.href = 'index.html';  // Change 'index.html' to your desired URL
+
+            alert('You have been logged out.');
+        });
     </script>
 </body>
 </html>
+
